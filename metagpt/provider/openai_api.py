@@ -160,7 +160,7 @@ class OpenAIGPTAPI(BaseGPTAPI, RateLimiter):
         self.rpm = int(config.get("RPM", 10))
 
     async def _achat_completion_stream(self, messages: list[dict]) -> str:
-        response = await openai.ChatCompletion.acreate(**self._cons_kwargs(messages), stream=True)
+        response = await openai.chat.completions.create(**self._cons_kwargs(messages), stream=True)
 
         # create variables to collect the stream of chunks
         collected_chunks = []
