@@ -126,6 +126,7 @@ def start_mcp_server() -> tuple[subprocess.Popen, str]:
 async def main():
     # 1. Start the MCP Server
     process, server_url = start_mcp_server()
+
     try:
         # 2. There is only one MCP Tool named `get_user_age` on the MCP Server
         mcp_client, mcp_tools = await register_mcp_tools(server_url)
