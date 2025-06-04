@@ -1,9 +1,8 @@
 from mcp.server.fastmcp import FastMCP
 
-# Initialize FastMCP server
 mcp = FastMCP("users")
 
-ages = {"Emma": 10, "Bob": 12}
+DATA = {"Emma": 10, "Bob": 12}
 
 
 @mcp.tool()
@@ -14,7 +13,7 @@ async def get_user_age(user_name: str) -> int:
         user_name: The name of user
     """
 
-    return ages.get(user_name, 0)
+    return DATA.get(user_name, 0)
 
 
 if __name__ == "__main__":
